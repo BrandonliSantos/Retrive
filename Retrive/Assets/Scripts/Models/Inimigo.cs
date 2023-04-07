@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Inimigo : EntidadeBase
 {
-  // Start is called before the first frame update
+    [SerializeField] protected Transform posPlayer;
     void Start()
     {
         

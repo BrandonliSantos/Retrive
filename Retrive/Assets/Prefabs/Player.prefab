@@ -71,7 +71,7 @@ MonoBehaviour:
   vidaMax: 0
   velocidadeAtaque: 0
   ataque: 0
-  velocidadeMovimento: 0
+  velocidadeMovimento: 5
   rb: {fileID: 1657104091}
 --- !u!1 &1570969459362981360
 GameObject:
