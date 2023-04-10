@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1570969459009237722}
   - component: {fileID: 1657104091}
   - component: {fileID: 1657104092}
+  - component: {fileID: 1657104093}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -67,12 +68,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e2cedb03db4af0498fd2007a0edf7b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vida: 0
-  vidaMax: 0
+  vida: 100
+  vidaMax: 100
   velocidadeAtaque: 0
   ataque: 0
   velocidadeMovimento: 5
   rb: {fileID: 1657104091}
+  barraVida: {fileID: 0}
+--- !u!70 &1657104093
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1570969459009237721}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.5, y: 1}
+  m_Direction: 0
 --- !u!1 &1570969459362981360
 GameObject:
   m_ObjectHideFlags: 0

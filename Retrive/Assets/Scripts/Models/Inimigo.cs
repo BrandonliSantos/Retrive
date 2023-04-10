@@ -30,4 +30,9 @@ public class Inimigo : EntidadeBase
     {
         throw new System.NotImplementedException();
     }
+
+    protected override void PerdeVida(int quantidade)
+    {
+        throw new System.NotImplementedException();
+    }
 }

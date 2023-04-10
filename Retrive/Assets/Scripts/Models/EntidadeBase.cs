@@ -15,4 +15,6 @@ public abstract class EntidadeBase : MonoBehaviour
      protected abstract void Atacar();
 
      protected abstract void Morrer();
+
+     protected abstract void PerdeVida(int quantidade);
 }
