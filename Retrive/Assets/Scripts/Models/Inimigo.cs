@@ -28,7 +28,13 @@ public class Inimigo : EntidadeBase
 
     protected override void Mover()
     {
-        throw new System.NotImplementedException();
+        Vector3 minhaposicao = transform.position;
+
+        Vector3 targetPosition = posPlayer.position;
+
+        Vector3 newPosition = Vector3.MoveTowards(minhaposicao, targetPosition, velocidadeMovimento * Time.deltaTime);
+
+        transform.position = newPosition;
     }
 
     protected override void PerdeVida(int quantidade)

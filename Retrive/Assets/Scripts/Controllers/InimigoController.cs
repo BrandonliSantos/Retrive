@@ -15,21 +15,10 @@ public class InimigoController : Inimigo
     // Update is called once per frame
     void Update()
     {
-
-        SeguirPlayer();
-       
+        
+        Mover();
+        
     }
 
-    void SeguirPlayer()
-    {
 
-        Vector3 minhaposicao = transform.position;
-
-        Vector3 targetPosition = posPlayer.position;
-
-        Vector3 newPosition = Vector3.MoveTowards(minhaposicao, targetPosition, velocidadeMovimento * Time.deltaTime);
-
-        transform.position = newPosition;
-
-    }
 }
