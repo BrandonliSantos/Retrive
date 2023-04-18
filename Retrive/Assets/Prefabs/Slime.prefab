@@ -180,7 +180,7 @@ MonoBehaviour:
   ataque: 0
   velocidadeMovimento: 1.5
   posPlayer: {fileID: 0}
-  myRB: {fileID: 0}
+  myRB: {fileID: 382685280}
 --- !u!58 &1155565987
 CircleCollider2D:
   m_ObjectHideFlags: 0

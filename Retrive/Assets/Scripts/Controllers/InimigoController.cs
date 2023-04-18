@@ -9,6 +9,8 @@ public class InimigoController : Inimigo
 
     void Start()
     {
+        var player = FindAnyObjectByType<PlayerController>();
+        posPlayer = player.transform ?? transform;
         myRB = GetComponent<Rigidbody2D>();
     }
 
