@@ -37,8 +37,13 @@ public class Inimigo : EntidadeBase
         transform.position = newPosition;
     }
 
-    protected override void PerdeVida(int quantidade)
+    public override void PerdeVida(int quantidade)
     {
-        throw new System.NotImplementedException();
+        vida -= quantidade;
+
+        if(vida <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }

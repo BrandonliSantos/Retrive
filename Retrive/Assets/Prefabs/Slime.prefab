@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8773776692764788452}
   - component: {fileID: 8773776692764788442}
   - component: {fileID: 8773776692764788443}
-  m_Layer: 0
+  m_Layer: 25
   m_Name: Sprite Sheet - Green Idle_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,9 +71,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -105541197
+  m_SortingLayer: 3
+  m_SortingOrder: 3
   m_Sprite: {fileID: -9074539206338946419, guid: c80534141f80d28489b1ef92f8ff7d99, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 382685280}
   - component: {fileID: 382685281}
   - component: {fileID: 1155565987}
-  m_Layer: 0
+  m_Layer: 25
   m_Name: Slime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -174,10 +174,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c89a0eddb435f424fafd387489c9c287, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vida: 0
-  vidaMax: 0
-  velocidadeAtaque: 0
-  ataque: 0
+  vida: 5
+  vidaMax: 5
+  velocidadeAtaque: 1
+  ataque: 1
   velocidadeMovimento: 1.5
   posPlayer: {fileID: 0}
   myRB: {fileID: 382685280}

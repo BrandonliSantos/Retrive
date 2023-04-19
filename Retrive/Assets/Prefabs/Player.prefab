@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 103836440}
-  m_Layer: 0
+  m_Layer: 24
   m_Name: PontoAtaqueSuperiorDireita
   m_TagString: Untagged
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1830886731}
-  m_Layer: 0
+  m_Layer: 24
   m_Name: PontoAtaqueSuperiorEsquerda
   m_TagString: Untagged
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
@@ -71,7 +71,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1862275628}
-  m_Layer: 0
+  m_Layer: 24
   m_Name: PontoAtaqueInferiorEsquerda
   m_TagString: Untagged
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
@@ -102,7 +102,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1864533507}
-  m_Layer: 0
+  m_Layer: 24
   m_Name: PontoAtaqueInferiorDireita
   m_TagString: Untagged
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 1657104091}
   - component: {fileID: 1657104092}
   - component: {fileID: 1657104093}
-  m_Layer: 0
+  m_Layer: 24
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -199,7 +199,7 @@ MonoBehaviour:
   vida: 100
   vidaMax: 100
   velocidadeAtaque: 1
-  ataque: 0
+  ataque: 3
   velocidadeMovimento: 5
   rb: {fileID: 1657104091}
   barraVida: {fileID: 0}
@@ -238,7 +238,7 @@ GameObject:
   - component: {fileID: 1570969459362981361}
   - component: {fileID: 1570969459362981363}
   - component: {fileID: 1570969459362981362}
-  m_Layer: 0
+  m_Layer: 24
   m_Name: player_placeholder_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -298,9 +298,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -105541197
+  m_SortingLayer: 3
+  m_SortingOrder: 3
   m_Sprite: {fileID: -786268882, guid: 91e41458a7b46614ca05acbeca33ca0d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

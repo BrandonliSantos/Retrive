@@ -121,9 +121,10 @@ public class PlayerController : EntidadeBase
         //Passando parâmetro para controller
         var controller = ataque.GetComponent<EspadaController>();
         controller.posAtaque = pontoAtaque;
+        controller.danoAtaque = this.ataque;
     }
 
-    protected override void PerdeVida(int quantidade)
+    public override void PerdeVida(int quantidade)
     {
         vida -= quantidade;
         barraVida.value = vida;
