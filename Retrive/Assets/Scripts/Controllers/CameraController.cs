@@ -21,6 +21,7 @@ public class CameraController : MonoBehaviour
 
     void SeguirPlayer()
     {
-        transform.position = Target.position + offset;
+        if(Target)
+            transform.position = Target.position + offset;
     }
 }

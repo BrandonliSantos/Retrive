@@ -19,7 +19,8 @@ public class EspadaController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = posAtaque.transform.position;
+        if(posAtaque)
+            transform.position = posAtaque.transform.position;
     }
 
     private void OnTriggerEnter2D(Collider2D other) 

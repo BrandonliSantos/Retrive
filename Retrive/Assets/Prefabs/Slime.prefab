@@ -180,6 +180,7 @@ MonoBehaviour:
   ataque: 1
   velocidadeMovimento: 1.5
   posPlayer: {fileID: 0}
+  sprite: {fileID: 8773776692764788442}
   myRB: {fileID: 382685280}
 --- !u!58 &1155565987
 CircleCollider2D:

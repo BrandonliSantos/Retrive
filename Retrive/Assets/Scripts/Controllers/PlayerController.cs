@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,6 +8,9 @@ public class PlayerController : EntidadeBase
 {
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Slider barraVida;
+    [SerializeField] private TextMeshPro textoLevel;
+
+    [SerializeField] private Slider barraXp;
 
     [SerializeField] List<GameObject> posAtaques;
 
@@ -16,10 +20,18 @@ public class PlayerController : EntidadeBase
 
     [SerializeField] float debug;
 
+    private int mortes = 0;
+    [SerializeField] TextMeshPro morteTexto;
+
     GameObject ultimoPontoAtaque;
     bool spriteInvertidaUltimoAtaque;
 
     float timer;
+
+    [SerializeField] int XpParaProximoNivel = 100;
+    [SerializeField] int XpAtual = 0;
+
+    [SerializeField] int level = 1;
 
     /*
         LISTA DE ATAQUES
@@ -35,6 +47,9 @@ public class PlayerController : EntidadeBase
     {
         barraVida.maxValue = vidaMax;
         barraVida.value = vidaMax;
+        barraXp.maxValue = XpParaProximoNivel;
+        barraXp.value = XpAtual;
+
         ultimoPontoAtaque = posAtaques[0];
         spriteInvertidaUltimoAtaque = false;
         timer = velocidadeAtaque;
@@ -91,7 +106,7 @@ public class PlayerController : EntidadeBase
 
         rb.velocity = new Vector2(x, y);
 
-        if(Input.GetAxis(Controle.HoldAttack) < 0)
+        if(Input.GetAxis(Controle.HoldAttack) == 0)
             AlterarLadoSprite(rb.velocity.x);
     }
 
@@ -128,5 +143,35 @@ public class PlayerController : EntidadeBase
     {
         vida -= quantidade;
         barraVida.value = vida;
+
+        if(vida <= 0)
+            Destroy(gameObject);
+    }
+
+    public void AumentarNumeroMortes()
+    {
+        mortes++;
+        var texto = $"Kills: {mortes}";
+        morteTexto.GetComponent<TextMeshPro>().SetText(texto);
+    }
+
+    public void GanharXp(int quantidade)
+    {
+        XpAtual += quantidade;
+
+        if(XpAtual >= XpParaProximoNivel)
+            SubirLevel();
+
+        barraXp.maxValue = XpParaProximoNivel;
+        barraXp.value = XpAtual;
+    }
+
+    public void SubirLevel()
+    {
+        XpAtual = 0;
+        level++;
+        XpParaProximoNivel = XpParaProximoNivel + (20 * level);
+
+        textoLevel.SetText($"LVL {level}");
     }
 }

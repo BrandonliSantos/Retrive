@@ -62,7 +62,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.63938427, y: -0.005156517}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -73,7 +73,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.2787685, y: 1.7631359}
   m_EdgeRadius: 0
 --- !u!1 &8844411468777414412
 GameObject:
@@ -85,8 +85,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4443763685932832105}
   - component: {fileID: 3075453725162682552}
-  - component: {fileID: 193775297548625444}
   - component: {fileID: 7239251525906292371}
+  - component: {fileID: 1803461056686351621}
   m_Layer: 23
   m_Name: espada_0
   m_TagString: Untagged
@@ -149,8 +149,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -105541197
   m_SortingLayer: 3
-  m_SortingOrder: 3
-  m_Sprite: {fileID: 2123894407, guid: f801c73041d59ea4bafb89189300d198, type: 3}
+  m_SortingOrder: 4
+  m_Sprite: {fileID: 710544021, guid: e7d39db3a1e05664eaa4b133af8866f1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -161,27 +161,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &193775297548625444
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8844411468777414412}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7aa79f6e1cebad3499eb49e05c138a8c, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &7239251525906292371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,3 +173,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 621a3ce7bc6629047bc7993e86a25c4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1803461056686351621
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8844411468777414412}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8e1084d61496b3046a75b70051a01dfe, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

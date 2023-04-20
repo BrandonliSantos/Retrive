@@ -5,6 +5,7 @@ using UnityEngine;
 public class Inimigo : EntidadeBase
 {
     [SerializeField] protected Transform posPlayer;
+    [SerializeField] protected SpriteRenderer sprite;
     void Start()
     {
         
@@ -28,6 +29,8 @@ public class Inimigo : EntidadeBase
 
     protected override void Mover()
     {
+        if(!posPlayer) return;
+
         Vector3 minhaposicao = transform.position;
 
         Vector3 targetPosition = posPlayer.position;
@@ -35,6 +38,12 @@ public class Inimigo : EntidadeBase
         Vector3 newPosition = Vector3.MoveTowards(minhaposicao, targetPosition, velocidadeMovimento * Time.deltaTime);
 
         transform.position = newPosition;
+
+        if(targetPosition.x < minhaposicao.x)
+            sprite.flipX = true;
+
+        else
+            sprite.flipX = false;      
     }
 
     public override void PerdeVida(int quantidade)
@@ -44,6 +53,14 @@ public class Inimigo : EntidadeBase
         if(vida <= 0)
         {
             Destroy(gameObject);
+            var player = FindAnyObjectByType<PlayerController>();
+
+            if(player)
+            {
+                player.AumentarNumeroMortes();
+                player.GanharXp(5);
+            }
         }
     }
+
 }
