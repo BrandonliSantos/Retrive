@@ -9,6 +9,7 @@ public abstract class EntidadeBase : MonoBehaviour
     [SerializeField] protected float velocidadeAtaque;
     [SerializeField] protected int ataque;
     [SerializeField] protected float velocidadeMovimento;
+    [SerializeField] protected bool estaVivo = true;
 
      protected abstract void Mover();
 

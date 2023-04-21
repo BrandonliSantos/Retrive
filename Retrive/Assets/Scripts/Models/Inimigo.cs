@@ -50,8 +50,9 @@ public class Inimigo : EntidadeBase
     {
         vida -= quantidade;
 
-        if(vida <= 0)
+        if(vida <= 0 && estaVivo)
         {
+            estaVivo = false;
             Destroy(gameObject);
             var player = FindAnyObjectByType<PlayerController>();
 
