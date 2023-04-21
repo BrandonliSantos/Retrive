@@ -77,10 +77,10 @@ MonoBehaviour:
   posPlayer: {fileID: 0}
   sprite: {fileID: 6467491338500522853}
   drop: {fileID: 2999257160774099220, guid: 71108fe6bafe2a6479ca0094e98feba2, type: 3}
-  limMaxX: 4.5
-  limMinX: -37
-  limMaxY: 2.5
-  limMinY: -25
+  limMaxX: 18.6
+  limMinX: -22
+  limMaxY: 13.8
+  limMinY: -13
   myRB: {fileID: 163399905}
 --- !u!61 &7009675559624328380
 BoxCollider2D:

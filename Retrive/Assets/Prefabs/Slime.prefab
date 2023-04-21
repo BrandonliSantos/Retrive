@@ -183,10 +183,10 @@ MonoBehaviour:
   posPlayer: {fileID: 0}
   sprite: {fileID: 8773776692764788442}
   drop: {fileID: 2999257160774099220, guid: 71108fe6bafe2a6479ca0094e98feba2, type: 3}
-  limMaxX: 5
-  limMinX: -36.7
-  limMaxY: 3
-  limMinY: -25
+  limMaxX: 19.2
+  limMinX: -22
+  limMaxY: 14.5
+  limMinY: -13.5
   myRB: {fileID: 382685280}
 --- !u!58 &1155565987
 CircleCollider2D:

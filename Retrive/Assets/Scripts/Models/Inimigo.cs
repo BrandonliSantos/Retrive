@@ -30,7 +30,6 @@ public class Inimigo : EntidadeBase
 
     protected override void Morrer()
     {
-
         if(vida <= 0 && estaVivo)
         {
             estaVivo = false;
@@ -42,14 +41,8 @@ public class Inimigo : EntidadeBase
             if(player)
             {
                 player.AumentarNumeroMortes();
-                player.GanharXp(5);
             }
-        }
-            
-            
-            
-        
-        
+        }      
     }
 
     protected override void Mover()
@@ -70,23 +63,15 @@ public class Inimigo : EntidadeBase
         else
             sprite.flipX = false;    
 
-        
-        
+
         float myX = Mathf.Clamp(transform.position.x, limMinX, limMaxX);
         float myY = Mathf.Clamp(transform.position.y, limMinY, limMaxY);
 
-        transform.position = new Vector3(myX, myY, 0f);
-
-
-
-          
+        transform.position = new Vector3(myX, myY, 0f);         
     }
 
     public override void PerdeVida(int quantidade)
     {
-        vida -= quantidade;
-
-        
+        vida -= quantidade;       
     }
-
 }
