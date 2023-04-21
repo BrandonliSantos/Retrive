@@ -20,9 +20,8 @@ public class InimigoController : Inimigo
     // Update is called once per frame
     void Update()
     {
-        
         Mover();
-        
+        Morrer();
     }
 
 

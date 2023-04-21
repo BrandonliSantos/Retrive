@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class Inimigo : EntidadeBase
 {
+
     [SerializeField] protected Transform posPlayer;
     [SerializeField] protected SpriteRenderer sprite;
+    [SerializeField] protected GameObject drop;
+    [SerializeField] protected float limMaxX;
+    [SerializeField] protected float limMinX;
+    [SerializeField] protected float limMaxY;
+    [SerializeField] protected float limMinY;
     void Start()
     {
         
@@ -24,7 +30,26 @@ public class Inimigo : EntidadeBase
 
     protected override void Morrer()
     {
-        throw new System.NotImplementedException();
+
+        if(vida <= 0 && estaVivo)
+        {
+            estaVivo = false;
+            Instantiate(drop, transform.position, transform.rotation);
+            
+            Destroy(gameObject);
+            var player = FindAnyObjectByType<PlayerController>();
+
+            if(player)
+            {
+                player.AumentarNumeroMortes();
+                player.GanharXp(5);
+            }
+        }
+            
+            
+            
+        
+        
     }
 
     protected override void Mover()
@@ -43,25 +68,25 @@ public class Inimigo : EntidadeBase
             sprite.flipX = true;
 
         else
-            sprite.flipX = false;      
+            sprite.flipX = false;    
+
+        
+        
+        float myX = Mathf.Clamp(transform.position.x, limMinX, limMaxX);
+        float myY = Mathf.Clamp(transform.position.y, limMinY, limMaxY);
+
+        transform.position = new Vector3(myX, myY, 0f);
+
+
+
+          
     }
 
     public override void PerdeVida(int quantidade)
     {
         vida -= quantidade;
 
-        if(vida <= 0 && estaVivo)
-        {
-            estaVivo = false;
-            Destroy(gameObject);
-            var player = FindAnyObjectByType<PlayerController>();
-
-            if(player)
-            {
-                player.AumentarNumeroMortes();
-                player.GanharXp(5);
-            }
-        }
+        
     }
 
 }
