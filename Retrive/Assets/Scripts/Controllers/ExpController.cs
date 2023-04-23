@@ -18,11 +18,11 @@ public class ExpController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
-            other.TryGetComponent<PlayerController>(out var player);
+        other.TryGetComponent<PlayerController>(out var player);
 
-            if(player is null) return;
+        if(player is null) return;
 
-            player.GanharXp(5);
-            Destroy(gameObject);
-    }
+        player.GanharXp(5);
+        Destroy(transform.parent.gameObject);
+}
 }
