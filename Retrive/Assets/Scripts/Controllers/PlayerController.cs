@@ -18,8 +18,6 @@ public class PlayerController : EntidadeBase
 
     [SerializeField] SpriteRenderer sprite;
 
-    [SerializeField] float debug;
-
     private int mortes = 0;
     [SerializeField] TextMeshPro morteTexto;
 
@@ -60,8 +58,6 @@ public class PlayerController : EntidadeBase
     {
         Atacar();
         Mover();
-
-        debug = Input.GetAxis(Controle.HoldAttack);
     }
 
     protected override void Atacar()
@@ -112,11 +108,11 @@ public class PlayerController : EntidadeBase
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
-        other.TryGetComponent<Inimigo>(out var inimigo);
+        other.TryGetComponent<InimigoController>(out var inimigo);
 
         if(inimigo is null) return;
         
-         PerdeVida(5);
+         PerdeVida(inimigo.ObterAtaque());
     }
 
     void AlterarLadoSprite(float velocidadeX) => sprite.flipX = velocidadeX < 0;
@@ -174,4 +170,6 @@ public class PlayerController : EntidadeBase
 
         textoLevel.SetText($"LVL {level}");
     }
+    
+    public int ObterLevel() => level;
 }

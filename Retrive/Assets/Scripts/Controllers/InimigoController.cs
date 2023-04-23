@@ -23,4 +23,14 @@ public class InimigoController : Inimigo
         Mover();
         Morrer();
     }
+
+    public void DefinirVida(int vida)
+    {
+        this.vidaMax = vida;
+        this.vida = vida;
+    }
+    public void DefinirVelocidadeAtaque(float vel) => this.velocidadeAtaque = vel;
+    public void DefinirAtaque(int ataque) => this.ataque = ataque;
+
+    public int ObterAtaque() => this.ataque;
 }

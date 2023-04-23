@@ -2761,6 +2761,11 @@ MeshRenderer:
   m_SortingLayer: 4
   m_SortingOrder: 10
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &548708596 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1570969459009237721, guid: 16c898b6018dd7143afd80da59d5a27d, type: 3}
+  m_PrefabInstance: {fileID: 1570969458518709248}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &579658928
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3161,6 +3166,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8875000197864393751, guid: 5860417a5afbcd14480a57cf8d8cf6cf, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 548708596}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5860417a5afbcd14480a57cf8d8cf6cf, type: 3}
 --- !u!1001 &941421046
@@ -16413,6 +16422,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8875000197864393751, guid: 5860417a5afbcd14480a57cf8d8cf6cf, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 548708596}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5860417a5afbcd14480a57cf8d8cf6cf, type: 3}
 --- !u!4 &1445021852 stripped
@@ -16954,6 +16967,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8875000197864393751, guid: 5860417a5afbcd14480a57cf8d8cf6cf, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 548708596}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5860417a5afbcd14480a57cf8d8cf6cf, type: 3}
 --- !u!1001 &1570969458518709248
@@ -16963,6 +16980,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1657104092, guid: 16c898b6018dd7143afd80da59d5a27d, type: 3}
+      propertyPath: level
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1657104092, guid: 16c898b6018dd7143afd80da59d5a27d, type: 3}
       propertyPath: barraXp
       value: 
@@ -17388,5 +17409,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8875000197864393751, guid: 5860417a5afbcd14480a57cf8d8cf6cf, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 548708596}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5860417a5afbcd14480a57cf8d8cf6cf, type: 3}

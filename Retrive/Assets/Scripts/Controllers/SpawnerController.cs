@@ -8,6 +8,7 @@ public class SpawnerController : MonoBehaviour
     [SerializeField] Transform spawnPos;
     [SerializeField] List<GameObject> Inimigos;
 
+    [SerializeField] GameObject player;
     float delay = 5;
     float timer = 0;
 
@@ -41,8 +42,24 @@ public class SpawnerController : MonoBehaviour
 
         float chance = Random.Range(0, 1f);
         var inimigo = chance >= chanceSpawnEsqueleto ? Inimigos[1] : Inimigos[0];
+        
+        inimigo = AdicionarAtributosAoInimigo(inimigo);
+
         Instantiate(inimigo, spawnPos.position, Quaternion.identity);
 
         timer = delay;
+    }
+
+    GameObject AdicionarAtributosAoInimigo(GameObject inimigo)
+    {
+        if(!player) return inimigo;
+
+        var levelPlayer = player.GetComponent<PlayerController>().ObterLevel();
+
+        inimigo.GetComponent<InimigoController>().DefinirAtaque(1 + levelPlayer);
+        inimigo.GetComponent<InimigoController>().DefinirVelocidadeAtaque(1 + .5f * levelPlayer);
+        inimigo.GetComponent<InimigoController>().DefinirVida(1 + 2 * levelPlayer);
+
+        return inimigo;
     }
 }
