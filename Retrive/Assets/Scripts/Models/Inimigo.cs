@@ -8,6 +8,8 @@ public class Inimigo : EntidadeBase
     [SerializeField] protected Transform posPlayer;
     [SerializeField] protected SpriteRenderer sprite;
     [SerializeField] protected GameObject drop;
+    [SerializeField] protected GameObject animMorte;
+    [SerializeField] protected float duracaoAnimMorte;
     [SerializeField] protected float limMaxX;
     [SerializeField] protected float limMinX;
     [SerializeField] protected float limMaxY;
@@ -42,6 +44,11 @@ public class Inimigo : EntidadeBase
             {
                 player.AumentarNumeroMortes();
             }
+
+            //Criar animação morte
+            var animacao = Instantiate(animMorte, transform.position, transform.rotation);
+            animacao.GetComponentInChildren<SpriteRenderer>().flipX = sprite.flipX;
+            Destroy(animacao, duracaoAnimMorte);
         }      
     }
 

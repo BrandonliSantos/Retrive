@@ -183,6 +183,8 @@ MonoBehaviour:
   posPlayer: {fileID: 0}
   sprite: {fileID: 8773776692764788442}
   drop: {fileID: 2999257160774099220, guid: 71108fe6bafe2a6479ca0094e98feba2, type: 3}
+  animMorte: {fileID: 4352030063768385566, guid: 5ad77707e83bfb74f99f76e431e2c3ce, type: 3}
+  duracaoAnimMorte: 1.5
   limMaxX: 19.2
   limMinX: -22
   limMaxY: 14.5
