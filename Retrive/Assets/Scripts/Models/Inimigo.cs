@@ -14,6 +14,8 @@ public class Inimigo : EntidadeBase
     [SerializeField] protected float limMinX;
     [SerializeField] protected float limMaxY;
     [SerializeField] protected float limMinY;
+
+    [SerializeField] protected Animator animator;
     void Start()
     {
         
@@ -79,6 +81,7 @@ public class Inimigo : EntidadeBase
 
     public override void PerdeVida(int quantidade)
     {
-        vida -= quantidade;       
+        vida -= quantidade;
+        animator.SetTrigger("RecebeDano");      
     }
 }

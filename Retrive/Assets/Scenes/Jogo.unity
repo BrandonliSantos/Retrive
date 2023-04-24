@@ -16985,6 +16985,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1657104092, guid: 16c898b6018dd7143afd80da59d5a27d, type: 3}
+      propertyPath: ataque
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1657104092, guid: 16c898b6018dd7143afd80da59d5a27d, type: 3}
       propertyPath: barraXp
       value: 
       objectReference: {fileID: 3198177638261438912}

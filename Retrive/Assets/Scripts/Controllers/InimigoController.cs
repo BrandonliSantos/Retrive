@@ -9,6 +9,8 @@ public class InimigoController : Inimigo
 
     void Start()
     {
+        animator = GetComponentInChildren<Animator>();
+
         var player = FindAnyObjectByType<PlayerController>();
 
         if(player)
