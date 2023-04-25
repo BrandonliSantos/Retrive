@@ -9,6 +9,8 @@ public class InimigoController : Inimigo
 
     void Start()
     {
+        timer = delayDisparo;
+
         animator = GetComponentInChildren<Animator>();
 
         var player = FindAnyObjectByType<PlayerController>();
@@ -22,6 +24,7 @@ public class InimigoController : Inimigo
     // Update is called once per frame
     void Update()
     {
+        Atacar();
         Mover();
         Morrer();
     }

@@ -7,22 +7,9 @@ public class Projeteis : MonoBehaviour
     [SerializeField] protected float velocidadeMovimento;
     [SerializeField] protected Rigidbody2D myRB;
     [SerializeField] protected Transform alvo;
+    [SerializeField] protected GameObject animacaoDestruir;
 
-    void Start()
-    {
-        
-    }
+    protected int dano = 0;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    protected void Movimento()
-    {
-        
-    }
-
-    
+    public void DefinirDano(int dano) => this.dano = dano;
 }

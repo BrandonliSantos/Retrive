@@ -5,31 +5,36 @@ using UnityEngine;
 public class Inimigo : EntidadeBase
 {
 
+    [Header("Objetos dependentes")]
     [SerializeField] protected Transform posPlayer;
     [SerializeField] protected SpriteRenderer sprite;
     [SerializeField] protected GameObject drop;
     [SerializeField] protected GameObject animMorte;
+    [SerializeField] protected Animator animator;
+    [SerializeField] protected GameObject projetil;
+
+    [Header("Propriedades")]
     [SerializeField] protected float duracaoAnimMorte;
     [SerializeField] protected float limMaxX;
     [SerializeField] protected float limMinX;
     [SerializeField] protected float limMaxY;
     [SerializeField] protected float limMinY;
-
-    [SerializeField] protected Animator animator;
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [SerializeField] protected bool disparaProjetil = false;
+    [SerializeField] protected float delayDisparo = 7f;
+    protected float timer = 0;
 
     protected override void Atacar()
     {
-        throw new System.NotImplementedException();
+        if(sprite.isVisible && disparaProjetil)
+        {
+            timer -= Time.deltaTime;
+
+            if(timer > 0) return;
+
+            var objProjetil = Instantiate(projetil, transform.position, transform.rotation);
+            objProjetil.GetComponent<ProjectilController>().DefinirDano(ataque);
+            timer = delayDisparo;
+        }
     }
 
     protected override void Morrer()
