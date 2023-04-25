@@ -32,6 +32,12 @@ public class ImaExpController : MonoBehaviour
            emContatoComPlayer = player is not null;
     }
 
+    private void OnTriggerExit2D(Collider2D other) {
+
+        emContatoComPlayer = false;
+        
+    }
+
     void SeguirPlayer()
     {
         if(!posPlayer) return;

@@ -3,7 +3,10 @@ guid: e0a5b556fad93214e97a4cacf82a3011
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - myRB: {instanceID: 0}
+  - projetil: {instanceID: 0}
+  - alvo: {fileID: 1570969459009237722, guid: 16c898b6018dd7143afd80da59d5a27d, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

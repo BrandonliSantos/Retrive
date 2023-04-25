@@ -6,7 +6,6 @@ public class Projeteis : MonoBehaviour
 {
     [SerializeField] protected float velocidadeMovimento;
     [SerializeField] protected Rigidbody2D myRB;
-    [SerializeField] protected GameObject projetil;
     [SerializeField] protected Transform alvo;
 
     void Start()
