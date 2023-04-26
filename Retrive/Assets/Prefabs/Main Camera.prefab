@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8372377002451616588}
   - component: {fileID: 8372377002451616590}
   - component: {fileID: 8372377002451616690}
+  - component: {fileID: 8372377002810997557}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -99,3 +100,41 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
   offset: {x: 0, y: 0, z: -1}
+--- !u!114 &8372377002810997557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8372377002451616591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bbb11ee2f36806449396fd03682753f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tremeSim: 0
+  Curva:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.013965607
+      value: 0.5141525
+      inSlope: -0.5245724
+      outSlope: -0.5245724
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.9985962
+      value: -0.002357483
+      inSlope: -0.5245724
+      outSlope: -0.5245724
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  duracao: 1

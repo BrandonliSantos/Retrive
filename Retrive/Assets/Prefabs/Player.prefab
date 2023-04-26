@@ -307,6 +307,7 @@ MonoBehaviour:
   velocidadeAtaque: 1
   ataque: 3
   velocidadeMovimento: 10
+  estaVivo: 1
   rb: {fileID: 1657104091}
   barraVida: {fileID: 0}
   textoLevel: {fileID: 0}
@@ -318,7 +319,6 @@ MonoBehaviour:
   - {fileID: 1862275627}
   espada: {fileID: 4820170634460257255, guid: aeb6fa1c749857340affd89e3e58294a, type: 3}
   sprite: {fileID: 3710491139968449549}
-  debug: 0
   morteTexto: {fileID: 0}
   XpParaProximoNivel: 100
   XpAtual: 0

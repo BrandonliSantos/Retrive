@@ -27,15 +27,13 @@ public class ProjectilController : Projeteis
         Vector2 dir = (Vector2)alvo.position - myRB.position;
         
         dir.Normalize();
-
-        //float rotacao = Vector3.Cross(dir, transform.up).z;
         
         myRB.angularVelocity = rotacaoVel;
 
         Vector3 newPosition = Vector3.MoveTowards(transform.position, alvo.position, velocidadeMovimento * Time.deltaTime);
         transform.position = newPosition;
         
-        //myRB.velocity = transform.up * velocidadeMovimento;
+        
     }
 
     private void OnTriggerEnter2D(Collider2D other) 

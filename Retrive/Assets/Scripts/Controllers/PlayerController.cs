@@ -20,6 +20,10 @@ public class PlayerController : EntidadeBase
 
     private int mortes = 0;
     [SerializeField] TextMeshPro morteTexto;
+    [SerializeField] private float limMinX;
+    [SerializeField] private float limMaxX;
+    [SerializeField] private float limMinY;
+    [SerializeField] private float limMaxY;
 
     GameObject ultimoPontoAtaque;
     bool spriteInvertidaUltimoAtaque;
@@ -51,6 +55,8 @@ public class PlayerController : EntidadeBase
         ultimoPontoAtaque = posAtaques[0];
         spriteInvertidaUltimoAtaque = false;
         timer = velocidadeAtaque;
+
+        
     }
 
     // Update is called once per frame
@@ -58,6 +64,7 @@ public class PlayerController : EntidadeBase
     {
         Atacar();
         Mover();
+
     }
 
     protected override void Atacar()
@@ -102,8 +109,15 @@ public class PlayerController : EntidadeBase
 
         rb.velocity = new Vector2(x, y);
 
+        float myX = Mathf.Clamp(transform.position.x, limMinX, limMaxX);
+        float myY = Mathf.Clamp(transform.position.y, limMinY, limMaxY);
+
+        transform.position = new Vector3(myX, myY, 0f);
+
         if(Input.GetAxis(Controle.HoldAttack) == 0)
             AlterarLadoSprite(rb.velocity.x);
+
+            
     }
 
     private void OnTriggerEnter2D(Collider2D other) 
@@ -111,7 +125,7 @@ public class PlayerController : EntidadeBase
         other.TryGetComponent<InimigoController>(out var inimigo);
 
         if(inimigo is null) return;
-        
+       
          PerdeVida(inimigo.ObterAtaque());
     }
 
@@ -139,7 +153,11 @@ public class PlayerController : EntidadeBase
     {
         vida -= quantidade;
         barraVida.value = vida;
-
+        var shake = FindObjectOfType<CameraShakeController>();
+        StartCoroutine(shake.CameraShake());
+        
+        
+    
         if(vida <= 0)
             Destroy(gameObject);
     }
