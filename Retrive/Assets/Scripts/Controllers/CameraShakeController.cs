@@ -27,7 +27,9 @@ public class CameraShakeController : MonoBehaviour
             posInicial = transform.position;
             tempoDeEspera += Time.deltaTime;
             float forcaShake = Curva.Evaluate(tempoDeEspera / duracao);
-            transform.position = posInicial + Random.insideUnitSphere * forcaShake;
+            var vector = posInicial + Random.insideUnitSphere * forcaShake;
+            vector.z = posInicial.z;
+            transform.position = vector;
             yield return null;
         }
         transform.position = posInicial;        

@@ -7,6 +7,11 @@ public class CameraController : MonoBehaviour
     public Transform Target;
     public Vector3 offset;
 
+    [SerializeField] private float limMinX;
+    [SerializeField] private float limMaxX;
+    [SerializeField] private float limMinY;
+    [SerializeField] private float limMaxY;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +27,13 @@ public class CameraController : MonoBehaviour
     void SeguirPlayer()
     {
         if(Target)
-            transform.position = Target.position + offset;
+        {
+            Vector3 posicaoPlayer = Target.position + offset;
+
+            float myX = Mathf.Clamp(posicaoPlayer.x, limMinX, limMaxX);
+            float myY = Mathf.Clamp(posicaoPlayer.y, limMinY, limMaxY);
+
+            transform.position = new Vector3(myX, myY, transform.position.z);
+        }
     }
 }

@@ -109,15 +109,13 @@ public class PlayerController : EntidadeBase
 
         rb.velocity = new Vector2(x, y);
 
+        if(Input.GetAxis(Controle.HoldAttack) == 0)
+            AlterarLadoSprite(rb.velocity.x);
+
         float myX = Mathf.Clamp(transform.position.x, limMinX, limMaxX);
         float myY = Mathf.Clamp(transform.position.y, limMinY, limMaxY);
 
         transform.position = new Vector3(myX, myY, 0f);
-
-        if(Input.GetAxis(Controle.HoldAttack) == 0)
-            AlterarLadoSprite(rb.velocity.x);
-
-            
     }
 
     private void OnTriggerEnter2D(Collider2D other) 
