@@ -28,6 +28,8 @@ public class PlayerController : EntidadeBase
     GameObject ultimoPontoAtaque;
     bool spriteInvertidaUltimoAtaque;
 
+    bool ultimoAtaqueRotacionado = false;
+
     float timer;
 
     [SerializeField] int XpParaProximoNivel = 100;
@@ -86,11 +88,13 @@ public class PlayerController : EntidadeBase
 
                 ultimoPontoAtaque = pontoAtaque ?? posAtaques[0];
 
-                InstanciarAtaque(ultimoPontoAtaque, !andandoParaDireita);
+                ultimoAtaqueRotacionado = pontoAtaque.Equals(posAtaques[2]) || pontoAtaque.Equals(posAtaques[3]);
+
+                InstanciarAtaque(ultimoPontoAtaque, !andandoParaDireita, ultimoAtaqueRotacionado);
             }
             else
             {
-                InstanciarAtaque(ultimoPontoAtaque, spriteInvertidaUltimoAtaque);
+                InstanciarAtaque(ultimoPontoAtaque, spriteInvertidaUltimoAtaque, ultimoAtaqueRotacionado);
             }
 
             timer = velocidadeAtaque;  
@@ -129,9 +133,25 @@ public class PlayerController : EntidadeBase
 
     void AlterarLadoSprite(float velocidadeX) => sprite.flipX = velocidadeX < 0;
 
-    void InstanciarAtaque(GameObject pontoAtaque, bool inverterSprite)
+    void InstanciarAtaque(GameObject pontoAtaque, bool inverterSprite, bool rotacionarAtaque)
     {
         var ataque = Instantiate(espada, pontoAtaque.transform.position, Quaternion.identity);
+
+        //rotacionar
+        if(rotacionarAtaque)
+        {
+            var z = inverterSprite ? 90 : -90;
+            ataque.transform.rotation = Quaternion.Euler(0, 0, z);
+        }
+
+        //ajuste colisão caso sprite invertido
+        if(inverterSprite)
+        {
+            var vectorOffset = ataque.GetComponent<BoxCollider2D>().offset;
+            Vector2 novoVectorOffset = new Vector2(vectorOffset.x * -1, vectorOffset.y);
+            ataque.GetComponent<BoxCollider2D>().offset = novoVectorOffset;
+        }
+            
 
         //Comportamento da sprite
         var spriteAtaque = ataque.GetComponentInChildren<SpriteRenderer>();
