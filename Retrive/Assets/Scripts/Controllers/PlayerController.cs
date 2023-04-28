@@ -10,6 +10,8 @@ public class PlayerController : EntidadeBase
     [SerializeField] private Slider barraVida;
     [SerializeField] private TextMeshPro textoLevel;
 
+    [SerializeField] private GameObject TelaLevelUp;
+
     [SerializeField] private Slider barraXp;
 
     [SerializeField] List<GameObject> posAtaques;
@@ -205,7 +207,31 @@ public class PlayerController : EntidadeBase
         XpParaProximoNivel = XpParaProximoNivel + (20 * level);
 
         textoLevel.SetText($"LVL {level}");
+
+        //Congela jogo e habilita tela de level up
+        Time.timeScale = 0;
+        TelaLevelUp.gameObject.SetActive(true);
+
+        //Player recupera vida ao subir de level
+        vida = vidaMax;
+        barraVida.maxValue = vidaMax;
+        barraVida.value = vidaMax;
     }
     
     public int ObterLevel() => level;
+
+    //Métodos de Evolução
+    public void IncrementarVida(int valor)
+    {
+        vidaMax += valor;
+        vida = vidaMax;
+
+        barraVida.maxValue = vidaMax;
+        barraVida.value = vidaMax;
+    }
+
+    public void IncrementarVelocidadeAtaque(float valor) => velocidadeAtaque -= valor;
+    public void IncrementarVelocidadeMovimento(float valor) => velocidadeMovimento += valor;
+    public void IncrementarAtaque(int valor) => ataque += valor;
+
 }
