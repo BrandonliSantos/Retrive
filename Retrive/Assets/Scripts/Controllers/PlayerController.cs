@@ -60,7 +60,6 @@ public class PlayerController : EntidadeBase
         spriteInvertidaUltimoAtaque = false;
         timer = velocidadeAtaque;
 
-        
     }
 
     // Update is called once per frame
@@ -163,12 +162,24 @@ public class PlayerController : EntidadeBase
 
         spriteAtaque.transform.position = pontoAtaque.transform.position;
 
+        //dano de ataque + chance de critico
+        var chanceCritico = Random.Range(0, 101);
+
         var danoAtaque = this.ataque + Random.Range(0, this.level + 1);
 
+        var danoCritico = false;
+
+        if(chanceCritico <= 10)
+        {
+            danoAtaque *= 2;
+            danoCritico = true;
+        }
+        
         //Passando parâmetro para controller
         var controller = ataque.GetComponent<EspadaController>();
         controller.posAtaque = pontoAtaque;
         controller.danoAtaque = danoAtaque;
+        controller.danoCritico = danoCritico;
     }
 
     public override void PerdeVida(int quantidade)

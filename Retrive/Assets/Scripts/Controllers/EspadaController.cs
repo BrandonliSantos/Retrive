@@ -8,6 +8,8 @@ public class EspadaController : MonoBehaviour
     [SerializeField] private GameObject popUpDano;
     public GameObject posAtaque;
 
+    public bool danoCritico = false;
+
     public int danoAtaque;
 
     // Start is called before the first frame update
@@ -34,6 +36,9 @@ public class EspadaController : MonoBehaviour
         //Criando popup de dano na cabeça do inimigo
         var popUp = Instantiate(popUpDano, other.transform.position, Quaternion.identity);
         popUp.transform.position = new Vector3(popUp.transform.position.x, popUp.transform.position.y + .5f, 10);
+
+        //mudando cor do dano caso critico
+        if(danoCritico) popUp.GetComponentInChildren<TextMeshPro>().faceColor = Color.red;
 
         //passando o dano causando para o popUp
         popUp.GetComponentInChildren<TextMeshPro>().SetText(danoAtaque.ToString());
