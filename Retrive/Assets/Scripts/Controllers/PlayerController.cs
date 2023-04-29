@@ -163,10 +163,12 @@ public class PlayerController : EntidadeBase
 
         spriteAtaque.transform.position = pontoAtaque.transform.position;
 
+        var danoAtaque = this.ataque + Random.Range(0, this.level + 1);
+
         //Passando parâmetro para controller
         var controller = ataque.GetComponent<EspadaController>();
         controller.posAtaque = pontoAtaque;
-        controller.danoAtaque = this.ataque;
+        controller.danoAtaque = danoAtaque;
     }
 
     public override void PerdeVida(int quantidade)
