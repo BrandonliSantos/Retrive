@@ -38,6 +38,8 @@ public class PlayerController : EntidadeBase
     [SerializeField] int XpAtual = 0;
 
     [SerializeField] int level = 1;
+    [SerializeField] float Iframes;
+    [SerializeField] float IframesFlashes;
 
     /*
         LISTA DE ATAQUES
@@ -123,7 +125,9 @@ public class PlayerController : EntidadeBase
         transform.position = new Vector3(myX, myY, 0f);
     }
 
-    private void OnTriggerEnter2D(Collider2D other) 
+
+
+    private void OnTriggerEnter2D(Collider2D other)
     {
         other.TryGetComponent<InimigoController>(out var inimigo);
 
@@ -188,6 +192,7 @@ public class PlayerController : EntidadeBase
         barraVida.value = vida;
         var shake = FindObjectOfType<CameraShakeController>();
         StartCoroutine(shake.CameraShake());
+        StartCoroutine(Invulnerabilidade());
         
         
     
@@ -242,6 +247,20 @@ public class PlayerController : EntidadeBase
         barraVida.maxValue = vidaMax;
         barraVida.value = vidaMax;
     }
+
+    private IEnumerator Invulnerabilidade()
+    {
+        Physics2D.IgnoreLayerCollision(24, 25, true);
+        
+        for (int i = 0; i < IframesFlashes; i++)
+        {
+            sprite.color = new Color(1, 1, 1, 0);
+            yield return new WaitForSeconds(Iframes / (IframesFlashes * 2));
+            sprite.color = new Color(1,1,1,1);
+            yield return new WaitForSeconds(Iframes / (IframesFlashes * 2));
+        }
+        Physics2D.IgnoreLayerCollision(24, 25, false);
+    } 
 
     public void IncrementarVelocidadeAtaque(float valor) => velocidadeAtaque -= valor;
     public void IncrementarVelocidadeMovimento(float valor) => velocidadeMovimento += valor;

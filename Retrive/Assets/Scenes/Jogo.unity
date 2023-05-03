@@ -353,6 +353,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Menu
       objectReference: {fileID: 0}
+    - target: {fileID: 7627823756221330022, guid: 2b84ff537aa304e44b204d02fd86710d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7627823756221330023, guid: 2b84ff537aa304e44b204d02fd86710d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -587,6 +591,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1657104092, guid: 16c898b6018dd7143afd80da59d5a27d, type: 3}
+      propertyPath: Iframes
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1657104092, guid: 16c898b6018dd7143afd80da59d5a27d, type: 3}
       propertyPath: barraXp
       value: 
       objectReference: {fileID: 3198177638261438912}
@@ -606,6 +614,10 @@ PrefabInstance:
       propertyPath: TelaLevelUp
       value: 
       objectReference: {fileID: 1667521357}
+    - target: {fileID: 1657104092, guid: 16c898b6018dd7143afd80da59d5a27d, type: 3}
+      propertyPath: IframesFlashes
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1570969459009237721, guid: 16c898b6018dd7143afd80da59d5a27d, type: 3}
       propertyPath: m_Name
       value: Player
@@ -782,6 +794,10 @@ PrefabInstance:
     - target: {fileID: 5018101980141301354, guid: 5ec7e28be7087034388fb09c1af0c280, type: 3}
       propertyPath: m_Name
       value: Necromante
+      objectReference: {fileID: 0}
+    - target: {fileID: 5018101980141301354, guid: 5ec7e28be7087034388fb09c1af0c280, type: 3}
+      propertyPath: m_Layer
+      value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ec7e28be7087034388fb09c1af0c280, type: 3}
