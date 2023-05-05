@@ -69,8 +69,7 @@ public class PlayerController : EntidadeBase
     void Update()
     {
         Atacar();
-        Mover();
-
+        Mover();  
     }
 
     protected override void Atacar()
@@ -231,6 +230,10 @@ public class PlayerController : EntidadeBase
         XpParaProximoNivel = XpParaProximoNivel + (20 * level);
 
         textoLevel.SetText($"LVL {level}");
+
+        //Desabilita camera shake
+        var shake = FindAnyObjectByType<CameraShakeController>();
+        shake.PodeTremer(false);
 
         //Congela jogo e habilita tela de level up
         Time.timeScale = 0;

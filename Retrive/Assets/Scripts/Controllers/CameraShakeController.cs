@@ -24,15 +24,20 @@ public class CameraShakeController : MonoBehaviour
 
         while (tempoDeEspera < duracao)
         {
-            posInicial = transform.position;
-            tempoDeEspera += Time.deltaTime;
-            float forcaShake = Curva.Evaluate(tempoDeEspera / duracao);
-            var vector = posInicial + Random.insideUnitSphere * forcaShake;
-            vector.z = posInicial.z;
-            transform.position = vector;
+            if(TremeSim)
+            {
+                posInicial = transform.position;
+                tempoDeEspera += Time.deltaTime;
+                float forcaShake = Curva.Evaluate(tempoDeEspera / duracao);
+                var vector = posInicial + Random.insideUnitSphere * forcaShake;
+                vector.z = posInicial.z;
+                transform.position = vector;
+            }
             yield return null;
         }
         transform.position = posInicial;        
     }
+
+    public void PodeTremer(bool podeTremer) => TremeSim = podeTremer;
 
 }

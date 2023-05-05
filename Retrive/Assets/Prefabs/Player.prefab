@@ -328,6 +328,8 @@ MonoBehaviour:
   XpParaProximoNivel: 100
   XpAtual: 0
   level: 1
+  Iframes: 1
+  IframesFlashes: 3
 --- !u!70 &1657104093
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
