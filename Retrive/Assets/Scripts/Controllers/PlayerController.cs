@@ -29,6 +29,7 @@ public class PlayerController : EntidadeBase
 
     GameObject ultimoPontoAtaque;
     bool spriteInvertidaUltimoAtaque;
+    bool spritePlayerInvertida = false;
 
     bool ultimoAtaqueRotacionado = false;
 
@@ -81,19 +82,18 @@ public class PlayerController : EntidadeBase
             if(Input.GetAxis(Controle.HoldAttack) == 0)
             {
                 bool andandoParaCima = rb.velocity.y >= 0;
-                bool andandoParaDireita = rb.velocity.x >= 0;
 
-                GameObject pontoAtaque =  andandoParaCima && andandoParaDireita ? posAtaques[0]
-                                        : andandoParaCima && !andandoParaDireita ? posAtaques[1]
-                                        : !andandoParaCima && andandoParaDireita ? posAtaques[2]
-                                        : !andandoParaCima && !andandoParaDireita ? posAtaques[3]
+                GameObject pontoAtaque =  andandoParaCima && !spritePlayerInvertida ? posAtaques[0]
+                                        : andandoParaCima && spritePlayerInvertida ? posAtaques[1]
+                                        : !andandoParaCima && !spritePlayerInvertida? posAtaques[2]
+                                        : !andandoParaCima && spritePlayerInvertida ? posAtaques[3]
                                         : null;
 
                 ultimoPontoAtaque = pontoAtaque ?? posAtaques[0];
 
                 ultimoAtaqueRotacionado = pontoAtaque.Equals(posAtaques[2]) || pontoAtaque.Equals(posAtaques[3]);
 
-                InstanciarAtaque(ultimoPontoAtaque, !andandoParaDireita, ultimoAtaqueRotacionado);
+                InstanciarAtaque(ultimoPontoAtaque, spritePlayerInvertida, ultimoAtaqueRotacionado);
             }
             else
             {
@@ -123,6 +123,12 @@ public class PlayerController : EntidadeBase
         float myY = Mathf.Clamp(transform.position.y, limMinY, limMaxY);
 
         transform.position = new Vector3(myX, myY, 0f);
+
+        //mantendo a rotação do sprite baseado no ultimo comando do player
+        if(rb.velocity.x != 0 && Input.GetAxis(Controle.HoldAttack) == 0)
+            spritePlayerInvertida = rb.velocity.x < 0;
+
+        sprite.flipX = spritePlayerInvertida;       
     }
 
 
