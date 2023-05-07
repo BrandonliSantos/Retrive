@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : EntidadeBase
 {
@@ -198,11 +199,14 @@ public class PlayerController : EntidadeBase
         var shake = FindObjectOfType<CameraShakeController>();
         StartCoroutine(shake.CameraShake());
         StartCoroutine(Invulnerabilidade());
-        
-        
-    
+        var scene = FindObjectOfType<MainMenu>();
+
         if(vida <= 0)
+        {   
+            scene.CenaEspecifica(0);
             Destroy(gameObject);
+        }
+            
     }
 
     public void AumentarNumeroMortes()
@@ -269,7 +273,9 @@ public class PlayerController : EntidadeBase
             yield return new WaitForSeconds(Iframes / (IframesFlashes * 2));
         }
         Physics2D.IgnoreLayerCollision(24, 25, false);
-    } 
+    }
+
+        
 
     public void IncrementarVelocidadeAtaque(float valor) => velocidadeAtaque -= valor;
     public void IncrementarVelocidadeMovimento(float valor) => velocidadeMovimento += valor;

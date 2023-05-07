@@ -14,21 +14,26 @@ public class MainMenu : MonoBehaviour
         StartCoroutine(CenaAnimcao());
     }
 
+
+    public void CenaEspecifica(int SceneIndex)
+    {
+        SceneManager.LoadScene(SceneIndex);
+        StartCoroutine(CenaAnimcao());
+    }
+
+
     public void Scenequit()
     {
-
         Application.Quit();
         StartCoroutine(CenaAnimcao());
-
     }
 
-    IEnumerator CenaAnimcao()
+    public IEnumerator CenaAnimcao()
     {
-
         transicao.SetTrigger("Start");
         yield return new WaitForSeconds(1f);
-
-
     }
+
+    
 
 }
