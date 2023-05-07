@@ -296,6 +296,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7627823755680573738, guid: 2b84ff537aa304e44b204d02fd86710d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7627823755680573739, guid: 2b84ff537aa304e44b204d02fd86710d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7627823755680573739, guid: 2b84ff537aa304e44b204d02fd86710d, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7627823755680573749, guid: 2b84ff537aa304e44b204d02fd86710d, type: 3}
+      propertyPath: m_FillCenter
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7627823755680573749, guid: 2b84ff537aa304e44b204d02fd86710d, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7627823755680573751, guid: 2b84ff537aa304e44b204d02fd86710d, type: 3}
+      propertyPath: m_BlocksRaycasts
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7627823755710886506, guid: 2b84ff537aa304e44b204d02fd86710d, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -585,6 +609,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1657104092, guid: 16c898b6018dd7143afd80da59d5a27d, type: 3}
+      propertyPath: vida
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 1657104092, guid: 16c898b6018dd7143afd80da59d5a27d, type: 3}
       propertyPath: barraXp
       value: 

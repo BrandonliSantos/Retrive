@@ -15,10 +15,11 @@ public class MainMenu : MonoBehaviour
     }
 
 
-    public void CenaEspecifica(int SceneIndex)
+    public IEnumerator CenaEspecifica(int SceneIndex)
     {
-        SceneManager.LoadScene(SceneIndex);
         StartCoroutine(CenaAnimcao());
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene(SceneIndex);
     }
 
 

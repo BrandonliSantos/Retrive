@@ -64,13 +64,24 @@ public class PlayerController : EntidadeBase
         spriteInvertidaUltimoAtaque = false;
         timer = velocidadeAtaque;
 
+        Physics2D.IgnoreLayerCollision(24, 25, false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        Atacar();
-        Mover();  
+        if(estaVivo)
+        {
+            Atacar();
+            Mover();
+        }
+
+        if(!estaVivo)
+        {
+            rb.velocity = Vector2.zero;
+            Morrer();
+        }
+            
     }
 
     protected override void Atacar()
@@ -106,7 +117,9 @@ public class PlayerController : EntidadeBase
 
     protected override void Morrer()
     {
-        throw new System.NotImplementedException();
+        var scene = FindObjectOfType<MainMenu>();
+        StartCoroutine(scene.CenaEspecifica(0));
+        sprite.color = new Color(1, 1, 1, 0);
     }
 
     protected override void Mover()
@@ -193,20 +206,16 @@ public class PlayerController : EntidadeBase
     }
 
     public override void PerdeVida(int quantidade)
-    {
+    {     
+        if(!estaVivo) return;
+
         vida -= quantidade;
         barraVida.value = vida;
         var shake = FindObjectOfType<CameraShakeController>();
         StartCoroutine(shake.CameraShake());
         StartCoroutine(Invulnerabilidade());
-        var scene = FindObjectOfType<MainMenu>();
 
-        if(vida <= 0)
-        {   
-            scene.CenaEspecifica(0);
-            Destroy(gameObject);
-        }
-            
+        if(vida <= 0) estaVivo = false;           
     }
 
     public void AumentarNumeroMortes()
