@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ExpController : MonoBehaviour
+public class MoedaController : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -22,7 +22,7 @@ public class ExpController : MonoBehaviour
 
         if(player is null) return;
 
-        player.GanharXp(5);
+        player.GanharMoedas(10);
         Destroy(transform.parent.gameObject);
     }
 }

@@ -43,6 +43,8 @@ public class PlayerController : EntidadeBase
     [SerializeField] float Iframes;
     [SerializeField] float IframesFlashes;
 
+    [SerializeField] int moedas = 0;
+
     /*
         LISTA DE ATAQUES
         0 - SUPERIOR DIREITA
@@ -235,6 +237,8 @@ public class PlayerController : EntidadeBase
         barraXp.maxValue = XpParaProximoNivel;
         barraXp.value = XpAtual;
     }
+
+    public void GanharMoedas(int quantidade) => moedas += quantidade;
 
     public void SubirLevel()
     {
