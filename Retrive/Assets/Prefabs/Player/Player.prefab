@@ -330,6 +330,8 @@ MonoBehaviour:
   level: 1
   Iframes: 1
   IframesFlashes: 3
+  moedas: 0
+  quantidadeMoedasText: {fileID: 0}
 --- !u!70 &1657104093
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

@@ -22,7 +22,7 @@ public class MoedaController : MonoBehaviour
 
         if(player is null) return;
 
-        player.GanharMoedas(10);
+        player.GanharMoedas(1);
         Destroy(transform.parent.gameObject);
     }
 }

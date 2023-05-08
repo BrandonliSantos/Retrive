@@ -44,6 +44,7 @@ public class PlayerController : EntidadeBase
     [SerializeField] float IframesFlashes;
 
     [SerializeField] int moedas = 0;
+    [SerializeField] TextMeshPro quantidadeMoedasText;
 
     /*
         LISTA DE ATAQUES
@@ -238,7 +239,11 @@ public class PlayerController : EntidadeBase
         barraXp.value = XpAtual;
     }
 
-    public void GanharMoedas(int quantidade) => moedas += quantidade;
+    public void GanharMoedas(int quantidade)
+    {
+        moedas += quantidade;
+        quantidadeMoedasText.SetText(moedas.ToString());
+    }
 
     public void SubirLevel()
     {
