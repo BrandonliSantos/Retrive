@@ -21,6 +21,7 @@ public class Inimigo : EntidadeBase
     [SerializeField] protected float limMinY;
     [SerializeField] protected bool disparaProjetil = false;
     [SerializeField] protected float delayDisparo = 7f;
+    [SerializeField] protected bool spriteOriginalViradoParaDireita = true;
     protected float timer = 0;
 
     protected override void Atacar()
@@ -75,9 +76,10 @@ public class Inimigo : EntidadeBase
             sprite.flipX = true;
 
         else
-            sprite.flipX = false;    
+            sprite.flipX = false;
 
-
+        sprite.flipX = spriteOriginalViradoParaDireita ? sprite.flipX : !sprite.flipX;
+           
         float myX = Mathf.Clamp(transform.position.x, limMinX, limMaxX);
         float myY = Mathf.Clamp(transform.position.y, limMinY, limMaxY);
 

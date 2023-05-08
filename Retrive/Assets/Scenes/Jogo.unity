@@ -287,7 +287,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1407650479
 PrefabInstance:
@@ -374,7 +374,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7627823756221330022, guid: 2b84ff537aa304e44b204d02fd86710d, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7627823756221330023, guid: 2b84ff537aa304e44b204d02fd86710d, type: 3}
       propertyPath: m_Pivot.x
@@ -386,7 +386,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7627823756221330023, guid: 2b84ff537aa304e44b204d02fd86710d, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7627823756221330023, guid: 2b84ff537aa304e44b204d02fd86710d, type: 3}
       propertyPath: m_AnchorMax.x
@@ -812,7 +812,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5018101980141301354, guid: 5ec7e28be7087034388fb09c1af0c280, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ec7e28be7087034388fb09c1af0c280, type: 3}
