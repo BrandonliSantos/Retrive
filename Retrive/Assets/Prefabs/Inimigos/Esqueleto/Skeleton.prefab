@@ -77,6 +77,7 @@ MonoBehaviour:
   posPlayer: {fileID: 0}
   sprite: {fileID: 6467491338500522853}
   drop: {fileID: 2999257160774099220, guid: 71108fe6bafe2a6479ca0094e98feba2, type: 3}
+  dropMoeda: {fileID: 8867391117040223418, guid: 038a6b9e8433c604ab540c8ab683fab5, type: 3}
   animMorte: {fileID: 5260410386527482093, guid: 6b5678ba5b5fbe4449ef7af723a4ab65, type: 3}
   animator: {fileID: 0}
   projetil: {fileID: 6460997317188192208, guid: 1c491f6270b7b8340915dd20caf2dc0e, type: 3}
@@ -87,6 +88,8 @@ MonoBehaviour:
   limMinY: -13
   disparaProjetil: 1
   delayDisparo: 7
+  spriteOriginalViradoParaDireita: 1
+  chanceDropMoedaPorcentagem: 1
   myRB: {fileID: 163399905}
 --- !u!61 &7009675559624328380
 BoxCollider2D:

@@ -183,6 +183,7 @@ MonoBehaviour:
   posPlayer: {fileID: 0}
   sprite: {fileID: 3136778113132536076}
   drop: {fileID: 2999257160774099220, guid: 71108fe6bafe2a6479ca0094e98feba2, type: 3}
+  dropMoeda: {fileID: 8867391117040223418, guid: 038a6b9e8433c604ab540c8ab683fab5, type: 3}
   animMorte: {fileID: 1185793874115379354, guid: 14adbbad397987e4ea0f40c86b6a713e, type: 3}
   animator: {fileID: 8927815887583440185}
   projetil: {fileID: 0}
@@ -194,6 +195,7 @@ MonoBehaviour:
   disparaProjetil: 0
   delayDisparo: 7
   spriteOriginalViradoParaDireita: 0
+  chanceDropMoedaPorcentagem: 1
   myRB: {fileID: 382685280}
 --- !u!58 &1155565987
 CircleCollider2D:

@@ -9,6 +9,7 @@ public class Inimigo : EntidadeBase
     [SerializeField] protected Transform posPlayer;
     [SerializeField] protected SpriteRenderer sprite;
     [SerializeField] protected GameObject drop;
+    [SerializeField] protected GameObject dropMoeda;
     [SerializeField] protected GameObject animMorte;
     [SerializeField] protected Animator animator;
     [SerializeField] protected GameObject projetil;
@@ -22,6 +23,8 @@ public class Inimigo : EntidadeBase
     [SerializeField] protected bool disparaProjetil = false;
     [SerializeField] protected float delayDisparo = 7f;
     [SerializeField] protected bool spriteOriginalViradoParaDireita = true;
+
+    [SerializeField] protected float chanceDropMoedaPorcentagem = 1;
     protected float timer = 0;
 
     protected override void Atacar()
@@ -43,7 +46,12 @@ public class Inimigo : EntidadeBase
         if(vida <= 0 && estaVivo)
         {
             estaVivo = false;
+
+            //Dropa EXP
             Instantiate(drop, transform.position, transform.rotation);
+
+            //Dropa Moeda
+            DroparMoeda();
             
             Destroy(gameObject);
             var player = FindAnyObjectByType<PlayerController>();
@@ -90,5 +98,18 @@ public class Inimigo : EntidadeBase
     {
         vida -= quantidade;
         animator.SetTrigger("RecebeDano");      
+    }
+
+    void DroparMoeda()
+    {
+        var chance = Random.Range(0, 101);
+
+        if(chance < chanceDropMoedaPorcentagem)
+        {
+            //Setando a posição para a moeda não ficar por cima do EXP
+            Vector3 posicaoSpawn = new Vector3(transform.position.x + .8f, transform.position.y, transform.position.z);
+            Instantiate(dropMoeda, posicaoSpawn, transform.rotation);
+        }
+            
     }
 }
