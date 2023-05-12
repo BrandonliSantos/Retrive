@@ -385,7 +385,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7627823756221330022, guid: 2b84ff537aa304e44b204d02fd86710d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7627823756221330023, guid: 2b84ff537aa304e44b204d02fd86710d, type: 3}
       propertyPath: m_Pivot.x
@@ -881,6 +881,10 @@ PrefabInstance:
     - target: {fileID: 6732378401497503071, guid: 498abbef0d061984e8ae03b84a110735, type: 3}
       propertyPath: m_Name
       value: EvoluirAtributos
+      objectReference: {fileID: 0}
+    - target: {fileID: 6732378401497503071, guid: 498abbef0d061984e8ae03b84a110735, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6732378401719110214, guid: 498abbef0d061984e8ae03b84a110735, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target

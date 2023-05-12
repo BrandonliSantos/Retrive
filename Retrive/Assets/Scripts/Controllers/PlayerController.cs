@@ -36,6 +36,8 @@ public class PlayerController : EntidadeBase
 
     float timer;
 
+    bool transicaoMorte = false;
+
     [SerializeField] int XpParaProximoNivel = 100;
     [SerializeField] int XpAtual = 0;
 
@@ -79,11 +81,19 @@ public class PlayerController : EntidadeBase
             Mover();
         }
 
-        if(!estaVivo)
+        if(!estaVivo && !transicaoMorte)
         {
+            transicaoMorte = true;
             rb.velocity = Vector2.zero;
             Morrer();
         }
+
+        //DEBUG
+        if(Input.GetKeyDown(KeyCode.T))
+            GanharMoedas(1);
+
+        if(Input.GetKeyDown(KeyCode.Y))
+            PerdeVida(50);
             
     }
 
@@ -120,6 +130,9 @@ public class PlayerController : EntidadeBase
 
     protected override void Morrer()
     {
+        var manager = FindAnyObjectByType<GameManager>();
+        manager.SalvarMoedasPlayer(moedas);
+        
         var scene = FindObjectOfType<MainMenu>();
         StartCoroutine(scene.CenaEspecifica(0));
         sprite.color = new Color(1, 1, 1, 0);
@@ -244,6 +257,8 @@ public class PlayerController : EntidadeBase
         moedas += quantidade;
         quantidadeMoedasText.SetText(moedas.ToString());
     }
+
+    public int ObterMoedas() => this.moedas;
 
     public void SubirLevel()
     {

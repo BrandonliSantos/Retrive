@@ -3,7 +3,22 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - MoedasPlayer
+  - AtaqueLVL
+  - AtaqueCusto
+  - AtaqueBotao
+  - VelocidadeLVL
+  - VelocidadeCusto
+  - VelocidadeBotao
+  - MovimentoLVL
+  - MovimentoCusto
+  - MovimentoBotao
+  - VidaLVL
+  - VidaCusto
+  - VidaBotao
+  - TelaInicio
+  - TelaUpgrade
   layers:
   - Default
   - TransparentFX

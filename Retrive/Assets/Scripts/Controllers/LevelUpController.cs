@@ -49,12 +49,4 @@ public class LevelUpController : MonoBehaviour
 
         Time.timeScale = 1;
     }
-
-    public enum TipoAtributo
-    {
-        Ataque = 0,
-        VidaMax = 1,
-        VelocidadeAtaque = 2,
-        VelocidadeMovimento = 3
-    }
 }
