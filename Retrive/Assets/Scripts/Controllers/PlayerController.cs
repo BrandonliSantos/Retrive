@@ -130,11 +130,7 @@ public class PlayerController : EntidadeBase
 
     protected override void Morrer()
     {
-        var manager = FindAnyObjectByType<GameManager>();
-        manager.SalvarMoedasPlayer(moedas);
-        
-        //var scene = FindObjectOfType<MainMenu>();
-        //StartCoroutine(scene.CenaEspecifica(0));
+        GameManager.instance.SalvarMoedasPlayer(moedas);
         GameManager.instance.VoltarParaMenu();
         sprite.color = new Color(1, 1, 1, 0);
     }

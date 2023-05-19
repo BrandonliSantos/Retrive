@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ExpController : MonoBehaviour
 {
+
+    int quantidadeExp = 5;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +24,8 @@ public class ExpController : MonoBehaviour
 
         if(player is null) return;
 
-        player.GanharXp(5);
+        var playerLevel = player.GetComponent<PlayerController>().ObterLevel();
+        player.GanharXp(quantidadeExp + Mathf.RoundToInt(playerLevel/2));
         Destroy(transform.parent.gameObject);
     }
 }

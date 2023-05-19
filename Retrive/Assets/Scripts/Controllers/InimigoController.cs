@@ -35,6 +35,7 @@ public class InimigoController : Inimigo
         this.vida = vida;
     }
     public void DefinirVelocidadeAtaque(float vel) => this.velocidadeAtaque = vel;
+    public void DefinirVelocidadeMovimento(float vel) => this.velocidadeMovimento = vel;
     public void DefinirAtaque(int ataque) => this.ataque = ataque;
 
     public int ObterAtaque() => this.ataque;

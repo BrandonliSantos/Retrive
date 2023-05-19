@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6784091405397504573}
   - component: {fileID: 3697573233799164309}
   - component: {fileID: 105096034327622322}
-  m_Layer: 25
+  m_Layer: 26
   m_Name: Exp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: 913552748619024708}
   - component: {fileID: 992353979850104325}
   - component: {fileID: 2129882895}
-  m_Layer: 25
+  m_Layer: 26
   m_Name: ColisorExp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 3968575533818164698}
   - component: {fileID: 6609657611396624949}
   - component: {fileID: 7116040406195883555}
-  m_Layer: 25
+  m_Layer: 26
   m_Name: Exp_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
