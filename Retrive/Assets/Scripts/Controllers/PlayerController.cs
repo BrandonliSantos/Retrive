@@ -133,8 +133,9 @@ public class PlayerController : EntidadeBase
         var manager = FindAnyObjectByType<GameManager>();
         manager.SalvarMoedasPlayer(moedas);
         
-        var scene = FindObjectOfType<MainMenu>();
-        StartCoroutine(scene.CenaEspecifica(0));
+        //var scene = FindObjectOfType<MainMenu>();
+        //StartCoroutine(scene.CenaEspecifica(0));
+        GameManager.instance.VoltarParaMenu();
         sprite.color = new Color(1, 1, 1, 0);
     }
 
@@ -307,8 +308,6 @@ public class PlayerController : EntidadeBase
         }
         Physics2D.IgnoreLayerCollision(24, 25, false);
     }
-
-        
 
     public void IncrementarVelocidadeAtaque(float valor) => velocidadeAtaque -= valor;
     public void IncrementarVelocidadeMovimento(float valor) => velocidadeMovimento += valor;

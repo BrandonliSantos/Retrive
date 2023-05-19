@@ -19,9 +19,13 @@ public class GameManager : MonoBehaviour
     bool AtributosPlayerSet = false;
     bool ComponentesObtidos = false;
 
+    public static GameManager instance;
+
     List<UpgradeUI> UpgradeComponents = new List<UpgradeUI>();
 
     TextMeshProUGUI TextoMoedasPlayer;
+
+    [SerializeField] GameObject TransicaoCena;
 
     
     private void Awake() 
@@ -31,15 +35,14 @@ public class GameManager : MonoBehaviour
 
         if(quantidade > 1) Destroy(gameObject);
 
-        DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(gameObject);  
 
         ObterSaveJogo(); 
     }
 
     void Start()
     {
-        
-
+        instance = this;
     }
 
     void Update()
@@ -70,6 +73,16 @@ public class GameManager : MonoBehaviour
         }
                     
     }
+
+    public void VoltarParaMenu()
+    {
+        Camera mainCamera = Camera.main;
+        Vector3 centroCamera = mainCamera.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, mainCamera.nearClipPlane));
+        Instantiate(TransicaoCena, centroCamera, transform.rotation);
+        Invoke("CarregarCenaMenu", 1f);
+    }
+
+    void CarregarCenaMenu() => SceneManager.LoadScene(0);
 
     void AtribuirUpgradesAoPlayer()
     {
