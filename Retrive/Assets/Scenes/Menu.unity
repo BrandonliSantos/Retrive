@@ -731,6 +731,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: SetActive
       objectReference: {fileID: 0}
+    - target: {fileID: 4903983930897738425, guid: 2b84ff537aa304e44b204d02fd86710d, type: 3}
+      propertyPath: m_text
+      value: Controls
+      objectReference: {fileID: 0}
     - target: {fileID: 7627823755710886518, guid: 2b84ff537aa304e44b204d02fd86710d, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
@@ -878,6 +882,10 @@ PrefabInstance:
     - target: {fileID: 7627823756221330023, guid: 2b84ff537aa304e44b204d02fd86710d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7627823756491539040, guid: 2b84ff537aa304e44b204d02fd86710d, type: 3}
+      propertyPath: m_text
+      value: Controls
       objectReference: {fileID: 0}
     - target: {fileID: 7740802390937260206, guid: 2b84ff537aa304e44b204d02fd86710d, type: 3}
       propertyPath: m_IsActive
