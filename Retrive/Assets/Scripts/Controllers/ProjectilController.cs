@@ -19,6 +19,7 @@ public class ProjectilController : Projeteis
 
         myRB.GetComponent<Rigidbody2D>();
         Destroy(gameObject, 3f);
+        Invoke(nameof(Destruir), 3f);
     }
 
     // Update is called once per frame
@@ -46,7 +47,7 @@ public class ProjectilController : Projeteis
         Destroy(gameObject);
     }
 
-    private void OnDestroy() 
+    private void Destruir() 
     {
         var animacao = Instantiate(animacaoDestruir, transform.position, Quaternion.identity);
         Destroy(animacao, .3f);    

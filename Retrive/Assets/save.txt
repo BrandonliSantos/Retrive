@@ -1,0 +1,1 @@
+{"QuantidadeMoedas":3,"Upgrades":[{"tipo":0,"level":1},{"tipo":2,"level":1},{"tipo":3,"level":1},{"tipo":1,"level":1}]}
