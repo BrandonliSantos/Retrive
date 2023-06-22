@@ -23,6 +23,7 @@ public class MoedaController : MonoBehaviour
         if(player is null) return;
 
         player.GanharMoedas(1);
+        Soundboard.instance.TocarSomPegarMoeda();
         Destroy(transform.parent.gameObject);
     }
 }

@@ -61,6 +61,8 @@ public class Inimigo : EntidadeBase
                 player.AumentarNumeroMortes();
             }
 
+            Soundboard.instance.TocarSomInimigoMorte();
+
             //Criar animação morte
             var animacao = Instantiate(animMorte, transform.position, transform.rotation);
             animacao.GetComponentInChildren<SpriteRenderer>().flipX = sprite.flipX;

@@ -45,7 +45,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 207cd456104f44a4391b141ae04051ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MusicaTeste: {fileID: 8300000, guid: 65f3a0867ec111d45a13494e3c028509, type: 3}
+  PlayerMorte: {fileID: 8300000, guid: 7a5a898cd2b56a341a1c815c7f2fb11d, type: 3}
+  PegarMoeda: {fileID: 8300000, guid: aabc51e44c39c2c489dd2e8da0af22bf, type: 3}
+  InimigoMorte: {fileID: 8300000, guid: 00b1faaf546aa7441990e36acc0f29a3, type: 3}
+  PlayerDano: {fileID: 8300000, guid: 9888f3eec973a9d488ff1fc6dbb13711, type: 3}
 --- !u!82 &7921032237852374556
 AudioSource:
   m_ObjectHideFlags: 0

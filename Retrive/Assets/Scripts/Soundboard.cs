@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class Soundboard : MonoBehaviour
 {
-    //Musicas
     AudioSource audioSource;
 
     //Efeitos Sonoros
+    [SerializeField] AudioClip PlayerMorte;
+    [SerializeField] AudioClip PegarMoeda;
+    [SerializeField] AudioClip InimigoMorte;
+    [SerializeField] AudioClip PlayerDano;
 
     // instancia singleton
     public static Soundboard instance;
@@ -39,4 +42,9 @@ public class Soundboard : MonoBehaviour
         audioSource.clip = som;
         audioSource.Play();
     }
+
+    public void TocarSomPlayerMorte() => TocarSom(PlayerMorte);
+    public void TocarSomPegarMoeda() => TocarSom(PegarMoeda);
+    public void TocarSomInimigoMorte() => TocarSom(InimigoMorte);
+    public void TocarSomPlayerDano() => TocarSom(PlayerDano);
 }

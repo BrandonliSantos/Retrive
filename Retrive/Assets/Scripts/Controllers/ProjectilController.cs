@@ -18,8 +18,8 @@ public class ProjectilController : Projeteis
             alvo = transform;
 
         myRB.GetComponent<Rigidbody2D>();
-        Destroy(gameObject, 3f);
         Invoke(nameof(Destruir), 3f);
+        Destroy(gameObject, 3f);
     }
 
     // Update is called once per frame

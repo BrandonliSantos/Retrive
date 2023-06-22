@@ -130,6 +130,7 @@ public class PlayerController : EntidadeBase
 
     protected override void Morrer()
     {
+        Soundboard.instance.TocarSomPlayerMorte();
         GameManager.instance.SalvarMoedasPlayer(moedas);
         GameManager.instance.VoltarParaMenu();
         sprite.color = new Color(1, 1, 1, 0);
@@ -227,6 +228,7 @@ public class PlayerController : EntidadeBase
         var shake = FindObjectOfType<CameraShakeController>();
         StartCoroutine(shake.CameraShake());
         StartCoroutine(Invulnerabilidade());
+        Soundboard.instance.TocarSomPlayerDano();
 
         if(vida <= 0) estaVivo = false;           
     }
